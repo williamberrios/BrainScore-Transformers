@@ -1,0 +1,40 @@
+TRAIN:
+    seed: 0
+    arch: 'crossvit_18_dagger_408'  
+    pretrained_arch: True
+    optimizer_name: 'adam'
+    lr: 0.00008
+    momentum: 0.9
+    weight_decay: 0.0001
+    scheduler_name: 'custom_lr_scheduler_v1'
+    start_epoch: 0
+    epochs: 6
+    print_freq: 100
+
+    mean: !!python/tuple [0.485, 0.456, 0.406]
+    std: !!python/tuple [0.229, 0.224, 0.225]
+
+    half: True
+    random_init: True
+    
+DATA:        
+    workers: 64
+    max_color_value: 255.0
+    batch_size: 64
+
+ADV:
+    enable: True
+    clip_eps: 2.0
+    fgsm_step: 2.5
+    
+AUGMENTATION:
+    img_size: 256
+    crop_size: 224
+    rot_inv: True
+    grayscale: False
+    
+PROJECT:
+    project_name: "Fast Adv-Training crossvit"
+    runname:      "crossvit-18-dagger-408-FAT-ROTINV"
+    output_dir:   "../SavedModels/"
+    wandb: True
