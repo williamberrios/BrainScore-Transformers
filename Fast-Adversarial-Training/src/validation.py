@@ -9,9 +9,9 @@ from tqdm import tqdm
 def validate_pgd(val_loader, model, criterion, K, step, configs, logger,name_arch = None):
     # Mean/Std for normalization   
     mean = torch.Tensor(np.array(configs.TRAIN.mean)[:, np.newaxis, np.newaxis])
-    mean = mean.expand(3,configs.DATA.crop_size, configs.DATA.crop_size).cuda()
+    mean = mean.expand(3,configs.AUGMENTATION.crop_size, configs.AUGMENTATION.crop_size).cuda()
     std = torch.Tensor(np.array(configs.TRAIN.std)[:, np.newaxis, np.newaxis])
-    std = std.expand(3, configs.DATA.crop_size, configs.DATA.crop_size).cuda()
+    std = std.expand(3, configs.AUGMENTATION.crop_size, configs.AUGMENTATION.crop_size).cuda()
     # Initiate the meters
     batch_time = AverageMeter()
     losses = AverageMeter()
@@ -100,9 +100,9 @@ def validate_pgd(val_loader, model, criterion, K, step, configs, logger,name_arc
 def validate(val_loader, model, criterion, configs, logger,name_arch = None):
     # Mean/Std for normalization   
     mean = torch.Tensor(np.array(configs.TRAIN.mean)[:, np.newaxis, np.newaxis])
-    mean = mean.expand(3,configs.DATA.crop_size, configs.DATA.crop_size).cuda()
+    mean = mean.expand(3,configs.AUGMENTATION.crop_size, configs.AUGMENTATION.crop_size).cuda()
     std = torch.Tensor(np.array(configs.TRAIN.std)[:, np.newaxis, np.newaxis])
-    std = std.expand(3, configs.DATA.crop_size, configs.DATA.crop_size).cuda()
+    std = std.expand(3, configs.AUGMENTATION.crop_size, configs.AUGMENTATION.crop_size).cuda()
     
     # Initiate the meters
     batch_time = AverageMeter()
