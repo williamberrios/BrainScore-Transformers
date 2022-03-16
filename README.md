@@ -1,7 +1,7 @@
 # Adversarial Training + Rotational Invariance of Transformers
 
 
-<img align="center" src="assets/targeted_attack.png" width="750">
+<img align="center" src="assets/targeted_attack.gif" width="750">
 
 
 
@@ -19,7 +19,7 @@ For more details please see our [BSW 2022 paper](https://openreview.net/forum?id
     ```
     pip install -r requirements.txt
     ```
-2.  Download Imagenet dataset and prepare validation split:
+2.  Download Imagenet dataset and [valprep.sh]() for preparing validation set:
     ```
     mkdir -p ./Dataset
     # Unzip data inside "Dataset"
@@ -33,12 +33,12 @@ For more details please see our [BSW 2022 paper](https://openreview.net/forum?id
 
 ## Pretrained weights
 
-| Model ID | Description/Weights | Val. Accuracy(%)  |  Avg  | V1  | V2 | V4 | IT | Behavior |
+| ID | Description | Val. Acc(%)  |  Avg  | V1  | V2 | V4 | IT | Behavior |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-|1057 | [CrossViT-18$\dagger$]()              |83.05 | 0.442 | 0.473 | 0.274 | 0.478 | 0.484 | 0.500 |
-|1095 | [CrossViT-18$\dagger$+Rotation]()     | 79.22 | 0.458 | 0.458 | 0.288 | 0.495 | 0.503 | 0.547 |
-|1084 | [CrossViT-18$\dagger$+Adv]()          | 64.60 | 0.462 | 0.497 | 0.343 | 0.508 | 0.519 | 0.441 |
-|991  | [CrossViT-18$\dagger$+Rotation+Adv]() | 73.53 | 0.488 | 0.493 | 0.342 | 0.514 | 0.531 | 0.562 |
+|1057 | [CrossViT-18&dagger;]()              |83.05 | 0.442 | 0.473 | 0.274 | 0.478 | 0.484 | 0.500 |
+|1095 | [CrossViT-18&dagger;+Rotation]()     | 79.22 | 0.458 | 0.458 | 0.288 | 0.495 | 0.503 | 0.547 |
+|1084 | [CrossViT-18&dagger;+Adv]()          | 64.60 | 0.462 | 0.497 | 0.343 | 0.508 | 0.519 | 0.441 |
+|991  | [CrossViT-18&dagger;+Rotation+Adv]() | 73.53 | 0.488 | 0.493 | 0.342 | 0.514 | 0.531 | 0.562 |
 
 
 
