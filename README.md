@@ -1,5 +1,4 @@
-# Joint rotational invariance and adversarial training of a dual-stream Transformer yields state of the art Brain-Score for Area V4
-
+# Adversarial Training + Rotational Invariance of Transformers
 
 
 <img align="center" src="assets/targeted_attack.png" width="750">
