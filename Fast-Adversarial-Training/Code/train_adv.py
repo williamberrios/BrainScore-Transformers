@@ -1,4 +1,3 @@
-# +
 import os
 import sys
 import math
@@ -15,7 +14,7 @@ from torch.autograd import Variable
 from torchvision import transforms
 from torch.cuda.amp import GradScaler
 from timm.models import create_model
-
+from omegaconf import OmegaConf
 module_path = "../src"
 if module_path not in sys.path:
     sys.path.append(module_path)
@@ -28,24 +27,16 @@ warnings.filterwarnings("ignore")
 os.environ['WANDB_SILENT']="true"
 
 
-# -
-
-
 def parse_args():
     parser = argparse.ArgumentParser(description='PyTorch ImageNet Training')
-    parser.add_argument('data', metavar='DIR',
-                    help='path to dataset')
-    parser.add_argument('-c', '--config', default='configs.yml', type=str, metavar='Path',
-                    help='path to the config file (default: configs.yml)')
-    parser.add_argument('--resume', default='', type=str, metavar='PATH',
-                    help='path to latest checkpoint (default: none)')
-    parser.add_argument('-e', '--evaluate', dest='evaluate', action='store_true',
-                    help='evaluate model on validation set')    
+    parser.add_argument('--data',type=str,default='Dataset/imagenet' ,help='path to dataset')
+    parser.add_argument('--config', default='configs.yml', type=str, metavar='Path',help='path to the config file (default: configs.yml)')
+    parser.add_argument('--resume', default='', type=str,help='path to latest checkpoint (default: none)')
+    parser.add_argument('--evaluate', dest='evaluate', action='store_true',help='evaluate model on validation set')    
     return parser.parse_args()
 
 
 def main():
-    print("Configs: ",configs)
     # Make Reproducible code:
     seed_everything(configs.TRAIN.seed)
     # Initialize wandb
@@ -69,8 +60,8 @@ def main():
     
     # Log the config details
     logger.info(pad_str(' ARGUMENTS '))
-    for k, v in configs.items(): print('{}: {}'.format(k, v))
     logger.info(pad_str(''))
+    print(OmegaConf.to_yaml(configs))
 
     
     # Create the model
@@ -215,6 +206,7 @@ def train(train_loader, model, criterion, optimizer, epoch, half=False,run = Non
             # Normalize batch of images
             in1 = input
             in1.sub_(mean).div_(std)
+        
         optimizer.zero_grad()
         
         if half: 

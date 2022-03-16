@@ -7,7 +7,7 @@ import numpy as np
 from PIL import Image
 import torch
 import torch.utils.data
-from easydict import EasyDict
+from omegaconf import OmegaConf
 from torchvision import transforms
 from iopath.common.file_io import PathManagerFactory
 module_path = "../src"
@@ -130,6 +130,6 @@ if __name__ == '__main__':
            'data'     : "../../../BrainScore/Dataset/ILSVRC/Data/imagenet",
            'TRAIN': {'mean': [0.485, 0.456, 0.406],'std' : [0.229, 0.224, 0.225]},
            }
-    cfg = EasyDict(cfg)
+    cfg = OmegaConf.create(cfg)
     dataset = Imagenet(cfg,'train',num_retries = 10)
     print(dataset.__getitem__(0)[0].mean())

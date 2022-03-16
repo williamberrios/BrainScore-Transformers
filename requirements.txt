@@ -1,0 +1,6 @@
+iopath==0.1.9
+omegaconf==2.1.1
+timm==0.5.4
+pyyaml==5.4.1
+wandb==0.12.11
+

@@ -4,11 +4,10 @@ import random
 import numpy as np
 import torch
 import datetime
-import torchvision.models as models
 import math
 import torch
 import yaml
-from easydict import EasyDict
+from omegaconf import OmegaConf
 import shutil
 
 class AverageMeter(object):
@@ -72,15 +71,12 @@ def pad_str(msg, total_len=70):
     rem_len = total_len - len(msg)
     return '*'*int(rem_len/2) + msg + '*'*int(rem_len/2)
 
-from yaml import Loader
 def parse_config_file(args):
     with open(args.config) as f:
-        config = EasyDict(yaml.load(f))
+        config = OmegaConf.load(f)
     # Add args parameters to the dict
     for k, v in vars(args).items():
         config[k] = v
-    # Add the output path
-    #config.output_name = f"{config.PROJECT.runname}"
     return config
 
 

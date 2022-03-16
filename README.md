@@ -29,6 +29,10 @@ For more details please see our [BSW 2022 paper](https://openreview.net/forum?id
 
 
 ## Usage
++ Generate or choose a config file from "Configs" folder and run the experiments:
+```
+python -u train_adv.py --data path/to/dataset --config path/to/config.yaml
+``` 
 
 
 ## Pretrained weights
