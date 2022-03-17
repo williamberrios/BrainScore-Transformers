@@ -133,3 +133,6 @@ dmypy.json
 
 # Ignore Tracking experiments
 Fast-Adversarial-Training/Code/wandb
+foolbox
+Imagenet-C
+robustness-madry
