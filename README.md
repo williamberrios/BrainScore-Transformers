@@ -53,13 +53,12 @@ If you find this useful for your work, please consider citing
 
 ```
 @inproceedings{
-anonymous2022joint,
+berrios2022joint,
 title={Joint rotational invariance and adversarial training of a dual-stream Transformer yields state of the art Brain-Score for Area V4},
-author={Anonymous},
-booktitle={Submitted to Brain-Score Workshop},
+author={William Berrios and Arturo Deza},
+booktitle={Brain-Score Workshop},
 year={2022},
-url={https://openreview.net/forum?id=SOulrWP-Xb5},
-note={under review}
+url={https://openreview.net/forum?id=SOulrWP-Xb5}
 }
 ```
 
