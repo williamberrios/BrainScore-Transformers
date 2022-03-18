@@ -137,8 +137,7 @@ def main():
     if run is not None:
         run.finish()
 
-global global_noise_data
-global_noise_data = torch.zeros([configs.DATA.batch_size, 3, configs.AUGMENTATION.crop_size, configs.AUGMENTATION.crop_size]).cuda()
+
 def train(train_loader, model, criterion, optimizer, epoch, half=False,run = None): 
     global global_noise_data
     mean = torch.Tensor(np.array(configs.TRAIN.mean)[:, np.newaxis, np.newaxis])
@@ -252,5 +251,7 @@ def train(train_loader, model, criterion, optimizer, epoch, half=False,run = Non
 if __name__ == '__main__':
     # Start Config and Logger
     configs = parse_config_file(parse_args())
+    global global_noise_data
+    global_noise_data = torch.zeros([configs.DATA.batch_size, 3, configs.AUGMENTATION.crop_size, configs.AUGMENTATION.crop_size]).cuda()
     logger = initiate_logger(configs,configs.evaluate)
     main()
