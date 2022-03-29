@@ -1,0 +1,14 @@
+MODEL:
+    arch: "vit_base_patch16_224"
+    pretrained: True
+    checkpoint: "../Fast-Adversarial-Training/SavedModels/ViT-Base-Patch-16-FAT-ROTINV/trained_models/checkpoint_epoch5.pth.tar"
+    mode: 'FAT'
+    resize: 256
+    cropsize: 224
+    
+DATA:
+    batch_size: 1
+DATASET_LAYERS_DICT: null
+
+REF:
+    run: "ViT-Base-Patch-16-FAT-epsilon:2/255-ROTINV"
