@@ -19,7 +19,7 @@ For more details please see our [BSW 2022 paper](https://openreview.net/forum?id
     ```
     pip install -r requirements.txt
     ```
-2.  Download Imagenet dataset and [valprep.sh]() for preparing validation set:
+2.  Download Imagenet dataset and [valprep.sh](https://drive.google.com/file/d/1eDdccl3EmOEWo-GCcV2i7Jfo0HdTT8Xi/view?usp=sharing) for preparing validation set:
     ```
     mkdir -p ./Dataset
     # Unzip data inside "Dataset"
@@ -39,10 +39,10 @@ python -u train_adv.py --data path/to/dataset --config path/to/config.yaml
 
 | ID | Description | Val. Acc(%)  |  Avg  | V1  | V2 | V4 | IT | Behavior |
 | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- | ------------- |
-|1057 | [CrossViT-18&dagger;]()              |83.05 | 0.442 | 0.473 | 0.274 | 0.478 | 0.484 | 0.500 |
-|1095 | [CrossViT-18&dagger;+Rotation]()     | 79.22 | 0.458 | 0.458 | 0.288 | 0.495 | 0.503 | 0.547 |
-|1084 | [CrossViT-18&dagger;+Adv]()          | 64.60 | 0.462 | 0.497 | 0.343 | 0.508 | 0.519 | 0.441 |
-|991  | [CrossViT-18&dagger;+Rotation+Adv]() | 73.53 | 0.488 | 0.493 | 0.342 | 0.514 | 0.531 | 0.562 |
+|1057 | [CrossViT-18&dagger;](https://github.com/rwightman/pytorch-image-models)              |83.05 | 0.442 | 0.473 | 0.274 | 0.478 | 0.484 | 0.500 |
+|1095 | [CrossViT-18&dagger;+Rotation](https://drive.google.com/file/d/1kosb-W-lpstsizWjVY0zPWmyOjP3jXz4/view?usp=sharing)     | 79.22 | 0.458 | 0.458 | 0.288 | 0.495 | 0.503 | 0.547 |
+|1084 | [CrossViT-18&dagger;+Adv](https://drive.google.com/file/d/1SSJejF0qhPfHcwUVC69MIIu7l1ID01ss/view?usp=sharing)          | 64.60 | 0.462 | 0.497 | 0.343 | 0.508 | 0.519 | 0.441 |
+|991  | [CrossViT-18&dagger;+Rotation+Adv](https://drive.google.com/file/d/1SSJejF0qhPfHcwUVC69MIIu7l1ID01ss/view?usp=sharing) | 73.53 | 0.488 | 0.493 | 0.342 | 0.514 | 0.531 | 0.562 |
 
 
 
